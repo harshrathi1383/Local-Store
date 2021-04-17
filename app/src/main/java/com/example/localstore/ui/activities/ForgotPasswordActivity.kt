@@ -1,6 +1,5 @@
-package com.example.localstore.activities
+package com.example.localstore.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.localstore.R

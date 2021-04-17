@@ -1,4 +1,4 @@
-package com.example.localstore.activities
+package com.example.localstore.ui.activities
 
 import android.content.Intent
 import android.os.Build
@@ -8,6 +8,7 @@ import android.os.Handler
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.example.localstore.R
+import com.example.localstore.firestore.FirestoreClass
 
 class SplashscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,20 @@ class SplashscreenActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         Handler().postDelayed(
             {
-                startActivity(Intent(this@SplashscreenActivity, LoginActivity::class.java))
+                // If the user is logged in once and did not logged out manually from the app.
+                // So, next time when the user is coming into the app user will be redirected to MainScreen.
+                // If user is not logged in or logout manually then user will  be redirected to the Login screen as usual.
+
+                // Get the current logged in user id
+                val currentUserID = FirestoreClass().getCurrentUserID()
+
+                if (currentUserID.isNotEmpty()) {
+                    // Launch dashboard screen.
+                    startActivity(Intent(this@SplashscreenActivity, DashboardActivity::class.java))
+                } else {
+                    // Launch the Login Activity
+                    startActivity(Intent(this@SplashscreenActivity, LoginActivity::class.java))
+                }
                 finish()
             },
             2500

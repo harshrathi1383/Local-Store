@@ -1,12 +1,14 @@
-package com.example.localstore.activities
+package com.example.localstore.ui.activities
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import com.example.localstore.R
-import com.example.localstore.activities.BaseActivity
-import com.example.localstore.activities.RegisterActivity
+import com.example.localstore.firestore.FirestoreClass
+import com.example.localstore.models.User
+import com.example.localstore.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -102,17 +104,40 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
             // Log-In using FirebaseAuth
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
-
-                    // Hide the progress dialog
-                    hideProgressDialog()
-
                     if (task.isSuccessful) {
-
-                        showErrorSnackBar("You are logged in successfully.", false)
+                        FirestoreClass().getUserDetails(this@LoginActivity)
                     } else {
+                        // Hide the progress dialog
+                        hideProgressDialog()
                         showErrorSnackBar(task.exception!!.message.toString(), true)
                     }
                 }
         }
     }
+
+    fun userLoggedInSuccess(user: User) {
+
+        // Hide the progress dialog.
+        hideProgressDialog()
+
+        // Print the user details in the log as of now.
+        Log.i("First Name: ", user.firstName)
+        Log.i("Last Name: ", user.lastName)
+        Log.i("Email: ", user.email)
+
+        if (user.profileCompleted == 0) {
+            // If the user profile is incomplete then launch the UserProfileActivity.
+            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAILS, user)
+            startActivity(intent)
+        } else {
+            // Redirect the user to Main Screen after log in.
+            /*startActivity(Intent(this@LoginActivity, MainActivity::class.java))*/
+
+            // Redirect the user to Dashboard Screen after log in.
+            startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
+        }
+        finish()
+    }
+
 }
