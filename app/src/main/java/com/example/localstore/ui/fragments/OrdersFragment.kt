@@ -6,21 +6,51 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.localstore.R
+import com.example.localstore.firestore.FirestoreClass
+import com.example.localstore.models.Order
+import com.example.localstore.ui.adapters.MyOrdersListAdapter
+import kotlinx.android.synthetic.main.fragment_orders.*
 
-class OrdersFragment : Fragment() {
-
-    //private lateinit var notificationsViewModel: NotificationsViewModel
+class OrdersFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //notificationsViewModel = ViewModelProvider(this).get(NotificationsViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_orders, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        textView.text = "This is Notification Fragment"
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getMyOrdersList()
+    }
+
+    private fun getMyOrdersList() {
+
+        showProgressDialog(resources.getString(R.string.please_wait))
+        FirestoreClass().getMyOrdersList(this@OrdersFragment)
+    }
+
+    fun populateOrdersListInUI(ordersList: ArrayList<Order>) {
+
+        hideProgressDialog()
+        if (ordersList.size > 0) {
+
+            rv_my_order_items.visibility = View.VISIBLE
+            tv_no_orders_found.visibility = View.GONE
+
+            rv_my_order_items.layoutManager = LinearLayoutManager(activity)
+            rv_my_order_items.setHasFixedSize(true)
+
+            val myOrdersAdapter = MyOrdersListAdapter(requireActivity(), ordersList)
+            rv_my_order_items.adapter = myOrdersAdapter
+        } else {
+            rv_my_order_items.visibility = View.GONE
+            tv_no_orders_found.visibility = View.VISIBLE
+        }
     }
 }

@@ -22,7 +22,7 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
 
         tv_edit.setOnClickListener(this@SettingsActivity)
         btn_logout.setOnClickListener(this@SettingsActivity)
-
+        ll_address.setOnClickListener(this@SettingsActivity)
     }
 
     override fun onResume() {
@@ -64,6 +64,11 @@ class SettingsActivity : BaseActivity(), View.OnClickListener {
                     startActivity(intent)
                     finish()
                 }
+                R.id.ll_address -> {
+                    val intent = Intent(this@SettingsActivity, AddressListActivity::class.java)
+                    startActivity(intent)
+                }
+
             }
         }
 
