@@ -17,25 +17,24 @@ The application provides sleek, simple and easy to use User interface built usin
 
 ## Screenshots
 #### Authentication
-<img src="Screenshots/Login.jpg" height="300px"> <img src="Screenshots/Register.jpg" height="300px">
-<img src="Screenshots/forgot password.jpg" height="300px">
+<img src="Screenshots/Login.jpg" height="300px"> <img src="Screenshots/Register.jpg" height="300px"> <img src="Screenshots/forgot password.jpg" height="300px">
 
 ### Profile
 <img src="Screenshots/Complete profile.jpg" height="300px">
 
 ### Dashboard Fragment
-<img src="Screenshots/Dashboard.jpg" height="300px"><img src="Screenshots/Product details.jpg" height="300px">
+<img src="Screenshots/Dashboard.jpg" height="300px"> <img src="Screenshots/Product details.jpg" height="300px">
 
 ### MyCart and Checkout
-<img src="Screenshots/My cart.jpg" height="300px"><img src="Screenshots/Checkout.jpg" height="300px">
+<img src="Screenshots/My cart.jpg" height="300px"> <img src="Screenshots/Checkout.jpg" height="300px">
 
 ### Product Fragment
-<img src="Screenshots/Product list.jpg" height="300px"><img src="Screenshots/Add product.jpg" height="300px">
+<img src="Screenshots/Product list.jpg" height="300px"> <img src="Screenshots/Add product.jpg" height="300px">
 
 ### Order Fragment
-<img src="Screenshots/Orders.jpg" height="300px"><img src="Screenshots/Order details.jpg" height="300px">
+<img src="Screenshots/Orders.jpg" height="300px"> <img src="Screenshots/Order details.jpg" height="300px">
 
 ### Sold Fragment
-<img src="Screenshots/Sold products.jpg" height="300px"><img src="Screenshots/Sold product details.jpg" height="300px">
+<img src="Screenshots/Sold products.jpg" height="300px"> <img src="Screenshots/Sold product details.jpg" height="300px">
 
 
