@@ -14,6 +14,7 @@ The application provides sleek, simple and easy to use User interface built usin
 <li>Glide</li>
 <li>Material Design</li>
 <li>XML</li>
+
 ## Screenshots
 #### Authentication
 <img src="Screenshots/Login.jpg" height="300px"> <img src="Screenshots/Register.jpg" height="300px">
