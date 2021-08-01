@@ -16,10 +16,7 @@ The application provides sleek, simple and easy to use User interface built usin
 <li>XML</li>
 ## Screenshots
 #### Authentication
-![image](https://user-images.githubusercontent.com/73106882/127773346-fcabd3d9-48dc-4b61-bc3c-c1ea007e0a0b.png)
-![image](https://user-images.githubusercontent.com/73106882/127773610-a9905a2c-8cfa-4792-85d9-6b220a42565b.png)
-![image](https://user-images.githubusercontent.com/73106882/127773611-64d70398-428e-4891-8519-81c23ebebee9.png)
-
-
+<img src="Screenshots/login.jpg" height="300px"> <img src="screenshots/register.jpg" height="300px">
+<img src="screenshots/forgot password.jpg" height="300px">
 
 
