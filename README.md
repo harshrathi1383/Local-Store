@@ -17,7 +17,7 @@ The application provides sleek, simple and easy to use User interface built usin
 ## Screenshots
 #### Authentication
 <img src="Screenshots/Login.jpg" height="300px"> <img src="Screenshots/Register.jpg" height="300px">
-<img src="Screenshots/Forgot password.jpg" height="300px">
+<img src="Screenshots/forgot password.jpg" height="300px">
 ### Profile
 <img src="Screenshots/Complete profile.jpg" height="300px">
 ### Dashboard Fragment
