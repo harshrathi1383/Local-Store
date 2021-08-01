@@ -16,7 +16,7 @@ The application provides sleek, simple and easy to use User interface built usin
 <li>XML</li>
 ## Screenshots
 #### Authentication
-<img src="Screenshots/login.jpg" height="300px"> <img src="screenshots/register.jpg" height="300px">
-<img src="screenshots/forgot password.jpg" height="300px">
+<img src="Screenshots/Login.jpg" height="300px"> <img src="screenshots/Register.jpg" height="300px">
+<img src="screenshots/Forgot password.jpg" height="300px">
 
 
